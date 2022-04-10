@@ -40,3 +40,14 @@ submitBtn.addEventListener("click", function(e){
         e.preventDefault();
     }
 })
+
+function 삼육구게임(num){
+    if(num % 3 == 0){
+        console.log("박수!");
+    }else{
+        console.log("통과!");
+    }
+}
+
+
+삼육구게임(3);
