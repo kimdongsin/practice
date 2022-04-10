@@ -36,6 +36,12 @@
     opacity: 1;
 }
 
-.down{
+.dark{
+    background-color: #000000;
+    color: #ffffff;
+}
 
+.light{
+    background-color: #ffffff;
+    color: #000000;
 }

@@ -10,6 +10,11 @@ const submitBtn = document.querySelector("#submitBtn");
 const userID = document.querySelector("#userID");
 const userPWD = document.querySelector("#userPWD");
 
+const dark = document.querySelector("#dark");
+const body = document.querySelector("body");
+
+let count = 0;
+
 menuList.style.display="none";
     
 menuBtn.addEventListener("click", function(){
@@ -41,44 +46,15 @@ submitBtn.addEventListener("click", function(e){
     }
 })
 
-function 삼육구게임(num){
-    if(num % 9 == 0){
-        console.log("박수x2!");
-    }else if(num % 3 == 0){
-        console.log("박수!");
-        
+
+dark.addEventListener("click", function(){
+    count += 1;
+    console.log(count);
+    if(count % 2 != 0){
+        body.classList.add("dark");
+        body.classList.remove("light");
     }else{
-        console.log("통과!");
+        body.classList.add("light");
+        body.classList.remove("dark");
     }
-}
-
-
-삼육구게임(3);
-
-
-
-/*
- Q3. 공인중개사 시험점수를 입력하면 합격인지 알려주는 함수를 만들어봅시다.
-
- 
-
-공인중개사 1차 시험은 개론, 민법 2개 과목이 있습니다.
-
-과목마다 100점 만점이지만 두 과목 합해서 120점 이상이면 합격시켜줍니다. 
-
-다만 한 과목이 40점 미만이면 과락으로 불합격됩니다.  
-
-과목 점수 2개를 파라미터로 입력하면 합격인지 불합격인지 여부를 콘솔창에 출력하는 함수를 만들어보십시오. 
-*/
-
-function 합격했냐(num1, num2){
-    if(num1 > 100 || num2 > 100){
-        console.log("정확한 점수를 입력해주세요.");
-    }else if(num1 < 40 || num2 < 40){
-        console.log("과락으로 불합격입니다.");
-    }else if((num1+num2) >= 120){
-        console.log("합격입니다.");
-    }else {
-        console.log("불합격입니다.");
-    }
-}
+})
