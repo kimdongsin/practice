@@ -22,3 +22,4 @@ mo.addEventListener("click", function(){
 cl.addEventListener("click", function(){
     bg.classList.remove("ani");
 })
+
