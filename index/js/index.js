@@ -44,46 +44,17 @@ submitBtn.addEventListener("click", function (e) {
     }
 })
 
+const al = document.querySelector(".alert");
+const sec = document.querySelector(".sec");
+let count = 5;
 
-
-var 예금액 = 60000;
-var 미래예금액 = 0;
-
-if ( 예금액 >= 50000 ){
-  미래예금액 = 예금액 * 1.2 ** 2 ;
-} else {
-  미래예금액 = 예금액 * 1.15 ** 2;
-}
-
-console.log(미래예금액) 
-
-
-/*
-
-첫 예금액이 5만원 미만이면 이율이 연 15퍼센트,
-
-첫 예금액이 5만원 이상이면 이율이 연 20퍼센트라고 합니다.
-
-
-(동작예시)
-
-var 예금액이라는 변수에
-60000을 집어넣으면 86400 이게 콘솔창에 출력되어야 합니다. (이자 20%가 2번 붙음)
-
-var 예금액이라는 변수에
-10000을 집어넣으면 13225 이게 콘솔창에 출력되어야 합니다. (이자 15%가 2번 붙음)
-
-
-(응용 1)
-
-위에서 1.2를 여러번 곱했는데 1.2를 10번 곱하려면 코드를 어떻게 짜야될까요? 
-
-1.2 * 1.2 * 1.2 ... 계속 하면 되긴 하는데
-
-자바스크립트엔 ** 이런 거듭제곱 연산자 기능도 있습니다.
-
- 
-
-*/
-
-
+setInterval(function(){
+    if(count == 0){
+        al.style.display ="none";
+    }else{
+        sec.innerHTML = `<span class="sec" >${count}</span>초 이내 구매시 사은품 증정`
+        console.log(count);
+        count--;
+    }
+    
+}, 1000)
