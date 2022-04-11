@@ -52,7 +52,7 @@ setInterval(function(){
     if(count == 0){
         al.style.display ="none";
     }else{
-        sec.innerHTML = `<span class="sec" >${count}</span>초 이내 구매시 사은품 증정`
+        sec.innerHTML = count;
         console.log(count);
         count--;
     }
