@@ -9,8 +9,8 @@
     display: block !important;
 }
 
-.hide{
-    display:none;
+.hide {
+    display: none;
 }
 
 .black-bg {
@@ -31,17 +31,53 @@
     padding: 30px;
 }
 
-.ani{
+.ani {
     visibility: visible;
     opacity: 1;
 }
 
-.dark{
+.dark {
     background-color: #000000;
     color: #ffffff;
 }
 
-.light{
+.light {
     background-color: #ffffff;
     color: #000000;
+}
+
+
+.slide-container {
+    width: 300vw;
+    transition: all 1s;
+    transform: translateX(-0px);
+} 
+  
+
+.slide-box {
+    width: 500px;
+    float: left;
+}
+
+.slide-box img {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.slideBox{
+    width: 500px;
+    display: block;
+    margin: 0 auto;
+}
+
+.btnBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnBox > button{
+    width: 50px;
+    height: 50px;
 }

@@ -19,6 +19,9 @@ let count = 5;
 
 const loginForm = document.querySelector(".loginForm");
 
+const slide = document.querySelector(".slide-container");
+const btn = document.querySelectorAll(".btnBox > button");
+
 menuList.style.display = "none";
 
 menuBtn.addEventListener("click", function () {
@@ -50,21 +53,34 @@ submitBtn.addEventListener("click", function (e) {
     }
 })
 
-loginForm.addEventListener("submit", function(e){
-    if(/[A-Z]/.test(userPWD.value) == false){
+loginForm.addEventListener("submit", function (e) {
+    if (/[A-Z]/.test(userPWD.value) == false) {
         alert("비밀번호에 대문자를 포함해주세요.")
         e.preventDefault();
     }
 })
 
 
-setInterval(function(){
-    if(count == 0){
-        al.style.display ="none";
-    }else{
+setInterval(function () {
+    if (count == 0) {
+        al.style.display = "none";
+    } else {
         sec.innerHTML = count;
         console.log(count);
         count--;
     }
-    
+
 }, 1000)
+
+
+for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener("click", function(){
+        if(btn[i] == btn[1]){
+            slide.style.transform = "translateX(" + (-500) + "px)"
+        }else if(btn[i] == btn[2]){
+            slide.style.transform = "translateX(" + (-1000) + "px)"
+        }else{
+            slide.style.transform = "translateX(" + (-0) + "px)"
+        }
+    })
+}
