@@ -13,6 +13,12 @@ const userPWD = document.querySelector("#userPWD");
 const dark = document.querySelector("#dark");
 const body = document.querySelector("body");
 
+const al = document.querySelector(".alert");
+const sec = document.querySelector(".sec");
+let count = 5;
+
+const loginForm = document.querySelector(".loginForm");
+
 menuList.style.display = "none";
 
 menuBtn.addEventListener("click", function () {
@@ -44,9 +50,13 @@ submitBtn.addEventListener("click", function (e) {
     }
 })
 
-const al = document.querySelector(".alert");
-const sec = document.querySelector(".sec");
-let count = 5;
+loginForm.addEventListener("submit", function(e){
+    if(/[A-Z]/.test(userPWD.value) == false){
+        alert("비밀번호에 대문자를 포함해주세요.")
+        e.preventDefault();
+    }
+})
+
 
 setInterval(function(){
     if(count == 0){
