@@ -112,9 +112,18 @@ next.addEventListener("click", function () {
     }
     slide.style.transform = "translateX(" + (-val) + "px)"
     console.log("val :"+ val);
-    
-
-    
 })
 
-console.log("val :"+ val);
+
+/* 
+Q1. 함수에 분과 초를 차례로 파라미터로 입력하면 ms단위로 바꿔서 뱉어주는 함수를 만들어봅시다.
+
+(1초 == 1000ms 입니다)
+
+*/
+
+function fun(min, sec){
+    return ((min * 60) + sec) * 1000;
+}
+
+console.log(fun(2, 10));
