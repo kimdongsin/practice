@@ -80,10 +80,16 @@ for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", function () {
         if (btn[i] == btn[1]) {
             slide.style.transform = "translateX(" + (-500) + "px)"
+            val = 500;
+            console.log("val :"+ val);
         } else if (btn[i] == btn[2]) {
             slide.style.transform = "translateX(" + (-1000) + "px)"
+            val = 1000;
+            console.log("val :"+ val);
         } else {
             slide.style.transform = "translateX(" + (-0) + "px)"
+            val = 0;
+            console.log("val :"+ val);
         }
     })
 }
