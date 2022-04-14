@@ -25,7 +25,8 @@ const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 let val = 0;
 
-const lorem = document.querySelector(".lorem");
+// const lorem = document.querySelector(".lorem");
+const lorem = $(".lorem");
 
 menuList.style.display = "none";
 
@@ -116,12 +117,14 @@ next.addEventListener("click", function () {
     console.log("val :" + val);
 })
 
-lorem.addEventListener('scroll', function(){
-    if(lorem.scrollTop + lorem.clientHeight >= lorem.scrollHeight-10){
+// lorem.addEventListener('scroll', function(){
+//     if(lorem.scrollTop + lorem.clientHeight >= lorem.scrollHeight-10){
+//         alert("통과");
+//     }
+// });
+
+lorem.on("scroll", function(){
+    if(lorem.scrollTop() + lorem.innerHeight() >= lorem.prop('scrollHeight')-10){
         alert("통과");
     }
-});
-
-console.log( lorem.scrollTop);
-    console.log( lorem.scrollHeight);
-    console.log( lorem.clientHeight);
+})
