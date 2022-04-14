@@ -20,8 +20,9 @@ let count = 5;
 const loginForm = document.querySelector(".loginForm");
 
 const slide = document.querySelector(".slide-container");
-const btn = document.querySelectorAll(".btnBox > button");
+const btn = document.querySelectorAll(".btnBox .btn");
 const next = document.querySelector(".next");
+const prev = document.querySelector(".prev");
 let val = 0;
 
 menuList.style.display = "none";
@@ -87,12 +88,27 @@ for (let i = 0; i < btn.length; i++) {
     })
 }
 
+prev.addEventListener("click", function () {
+    val -= 500;
+    if(val == -500 && prev){
+        val = 1000;
+    }
+    slide.style.transform = "translateX(" + (-val) + "px)"
+    console.log("val :"+ val);
+    
+    
+})
 
 next.addEventListener("click", function () {
-    slide.style.transform = "translateX(" + (-val) + "px)"
     val += 500;
-
-    if(val == 1500){
+    if(val == 1500 && next){
         val = 0;
     }
+    slide.style.transform = "translateX(" + (-val) + "px)"
+    console.log("val :"+ val);
+    
+
+    
 })
+
+console.log("val :"+ val);
