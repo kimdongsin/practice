@@ -81,49 +81,55 @@ for (let i = 0; i < btn.length; i++) {
         if (btn[i] == btn[1]) {
             slide.style.transform = "translateX(" + (-500) + "px)"
             val = 500;
-            console.log("val :"+ val);
+            console.log("val :" + val);
         } else if (btn[i] == btn[2]) {
             slide.style.transform = "translateX(" + (-1000) + "px)"
             val = 1000;
-            console.log("val :"+ val);
+            console.log("val :" + val);
         } else {
             slide.style.transform = "translateX(" + (-0) + "px)"
             val = 0;
-            console.log("val :"+ val);
+            console.log("val :" + val);
         }
     })
 }
 
 prev.addEventListener("click", function () {
     val -= 500;
-    if(val == -500 && prev){
+    if (val == -500 && prev) {
         val = 1000;
     }
     slide.style.transform = "translateX(" + (-val) + "px)"
-    console.log("val :"+ val);
-    
-    
+    console.log("val :" + val);
+
+
 })
 
 next.addEventListener("click", function () {
     val += 500;
-    if(val == 1500 && next){
+    if (val == 1500 && next) {
         val = 0;
     }
     slide.style.transform = "translateX(" + (-val) + "px)"
-    console.log("val :"+ val);
+    console.log("val :" + val);
 })
 
 
 /* 
-Q1. 함수에 분과 초를 차례로 파라미터로 입력하면 ms단위로 바꿔서 뱉어주는 함수를 만들어봅시다.
+Q2. 가격을 파라미터로 입력하면 10% 할인가를 뱉는 함수를 만들어봅시다.
 
-(1초 == 1000ms 입니다)
+근데 첫 구매여부도 true/false로 둘째파라미터에 입력해서 첫 구매가 맞을 경우 추가로 1.5 달러도 할인해줘야합니다. 
+
+주의사항은 가격으로 10.3 이런거 넣으면 뒤에 소수점 길게 나올 수도 있으니 알아서 처리해보든가 합시다. 
 
 */
 
-function fun(min, sec){
-    return ((min * 60) + sec) * 1000;
+function fun(dc, whether) {
+    if (whether == true) {
+        return parseFloat(dc - (dc * 0.1) - (dc * 0.15)).toFixed(2);
+    } else {
+        return parseFloat(dc - (dc * 0.1)).toFixed(2);
+    }
 }
 
-console.log(fun(2, 10));
+console.log(fun(10.3, true));
