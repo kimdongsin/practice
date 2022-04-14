@@ -117,10 +117,11 @@ next.addEventListener("click", function () {
 })
 
 lorem.addEventListener('scroll', function(){
-    if(lorem.scrollTop + lorem.clientHeight == lorem.scrollHeight){
+    if(lorem.scrollTop + lorem.clientHeight >= lorem.scrollHeight-10){
         alert("통과");
     }
-    console.log( lorem.scrollTop);
+});
+
+console.log( lorem.scrollTop);
     console.log( lorem.scrollHeight);
     console.log( lorem.clientHeight);
-});
