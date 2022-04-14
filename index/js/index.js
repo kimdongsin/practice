@@ -21,6 +21,8 @@ const loginForm = document.querySelector(".loginForm");
 
 const slide = document.querySelector(".slide-container");
 const btn = document.querySelectorAll(".btnBox > button");
+const next = document.querySelector(".next");
+let val = 0;
 
 menuList.style.display = "none";
 
@@ -74,13 +76,23 @@ setInterval(function () {
 
 
 for (let i = 0; i < btn.length; i++) {
-    btn[i].addEventListener("click", function(){
-        if(btn[i] == btn[1]){
+    btn[i].addEventListener("click", function () {
+        if (btn[i] == btn[1]) {
             slide.style.transform = "translateX(" + (-500) + "px)"
-        }else if(btn[i] == btn[2]){
+        } else if (btn[i] == btn[2]) {
             slide.style.transform = "translateX(" + (-1000) + "px)"
-        }else{
+        } else {
             slide.style.transform = "translateX(" + (-0) + "px)"
         }
     })
 }
+
+
+next.addEventListener("click", function () {
+    slide.style.transform = "translateX(" + (-val) + "px)"
+    val += 500;
+
+    if(val == 1500){
+        val = 0;
+    }
+})
