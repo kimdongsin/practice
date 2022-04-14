@@ -25,6 +25,8 @@ const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 let val = 0;
 
+const lorem = document.querySelector(".lorem");
+
 menuList.style.display = "none";
 
 menuBtn.addEventListener("click", function () {
@@ -114,22 +116,11 @@ next.addEventListener("click", function () {
     console.log("val :" + val);
 })
 
-
-/* 
-Q2. 가격을 파라미터로 입력하면 10% 할인가를 뱉는 함수를 만들어봅시다.
-
-근데 첫 구매여부도 true/false로 둘째파라미터에 입력해서 첫 구매가 맞을 경우 추가로 1.5 달러도 할인해줘야합니다. 
-
-주의사항은 가격으로 10.3 이런거 넣으면 뒤에 소수점 길게 나올 수도 있으니 알아서 처리해보든가 합시다. 
-
-*/
-
-function fun(dc, whether) {
-    if (whether == true) {
-        return parseFloat(dc - (dc * 0.1) - (dc * 0.15)).toFixed(2);
-    } else {
-        return parseFloat(dc - (dc * 0.1)).toFixed(2);
+lorem.addEventListener('scroll', function(){
+    if(lorem.scrollTop + lorem.clientHeight == lorem.scrollHeight){
+        alert("통과");
     }
-}
-
-console.log(fun(10.3, true));
+    console.log( lorem.scrollTop);
+    console.log( lorem.scrollHeight);
+    console.log( lorem.clientHeight);
+});

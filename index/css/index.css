@@ -1,3 +1,7 @@
+body{
+    padding-top: 56px;
+}
+
 .alert-box {
     background-color: skyblue;
     padding: 20px;
@@ -80,4 +84,37 @@
 .btnBox > button{
     width: 50px;
     height: 50px;
+}
+
+.navbar {
+    position : fixed !important;
+    width : 100%;
+    z-index : 5;
+    top: 0;
+  }
+.navbar-brand {
+    font-size : 30px !important;
+    transition : all 1s;
+}
+
+.list-group{
+    position : fixed !important;
+    top: 71px;
+    width : 100%;
+    z-index : 5
+}
+
+.login__btn__bg{
+    width: 100%;
+    height: 300px;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+}
+
+button{
+    border: 1px solid red;
 }
