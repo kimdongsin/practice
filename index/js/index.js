@@ -28,6 +28,8 @@ let val = 0;
 // const lorem = document.querySelector(".lorem");
 const lorem = $(".lorem");
 
+const logo = document.querySelector(".logo");
+
 menuList.style.display = "none";
 
 menuBtn.addEventListener("click", function () {
@@ -123,8 +125,33 @@ next.addEventListener("click", function () {
 //     }
 // });
 
-lorem.on("scroll", function(){
-    if(lorem.scrollTop() + lorem.innerHeight() >= lorem.prop('scrollHeight')-10){
-        alert("통과");
+const box = document.querySelector(".box__width");
+
+// $(window).on("scroll", function(){
+//     var percent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
+//     $('.box__width').css('width', percent+"%");
+//     console.log(percent.toFixed(0) + "%");
+// })
+
+window.addEventListener("scroll", function () {
+    var per = ((window.scrollY / (document.body.clientHeight - window.innerHeight)) * 100);
+    box.style.width = per + "%";
+    console.log(per.toFixed(0) + "%");
+})
+
+// lorem.on("scroll", function(){
+//     if(lorem.scrollTop() + lorem.innerHeight() >= lorem.prop('scrollHeight')-10){
+//         alert("통과");
+//     }
+// })
+
+// ( 스크롤 된 높이+ 보고있는화면(viewport)높이 ) / 전체문서높이 * 100
+
+
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 100) {
+        logo.style.fontSize = "50px";
+    } else {
+        logo.style.fontSize = "30px";
     }
 })
