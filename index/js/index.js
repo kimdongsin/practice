@@ -139,11 +139,15 @@ window.addEventListener("scroll", function () {
     console.log(per.toFixed(0) + "%");
 })
 
-// lorem.on("scroll", function(){
-//     if(lorem.scrollTop() + lorem.innerHeight() >= lorem.prop('scrollHeight')-10){
-//         alert("통과");
-//     }
-// })
+
+var con = 1;
+
+lorem.on("scroll", function(){
+    if(lorem.scrollTop() + lorem.innerHeight() >= lorem.prop('scrollHeight')-10 && con == 1){
+        alert("통과");
+        con+=1;
+    }
+})
 
 // ( 스크롤 된 높이+ 보고있는화면(viewport)높이 ) / 전체문서높이 * 100
 
