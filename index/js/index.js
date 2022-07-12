@@ -159,3 +159,10 @@ window.addEventListener("scroll", function () {
         logo.style.fontSize = "30px";
     }
 })
+
+var car2 = { name : '소나타', price : 50000 };
+
+const product = document.querySelectorAll(".card span");
+
+product[0].innerHTML = car2.name;
+product[1].innerHTML = car2["price"];
